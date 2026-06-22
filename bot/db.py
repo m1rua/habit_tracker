@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 async def get_connection():
-    return await asyncpg.connect(os.getenv("DATABASE_URL"))
+    return await asyncpg.connect(os.getenv("DATABASE_URL"), ssl=False)
 
 async def create_habit(user_id: int, name: str):
     conn = await get_connection()

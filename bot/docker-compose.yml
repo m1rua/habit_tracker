@@ -9,6 +9,7 @@ services:
   db:
     image: postgres:15
     environment:
+      POSTGRES_HOST_AUTH_METHOD: md5
       POSTGRES_DB: habits
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
