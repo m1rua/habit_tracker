@@ -1,4 +1,3 @@
-import asyncio
 import logging
 from db import create_habit, get_habits, delete_habit, habit_log, is_habit_logged_today, get_stats
 from keyboards import main_menu, habits_delete_keyboard, habits_log_keyboard, stats_keyboard
