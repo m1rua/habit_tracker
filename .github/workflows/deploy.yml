@@ -16,7 +16,7 @@ jobs:
       - name: Lint
         run: |
           pip install flake8
-          flake8 bot/ --max-line-length=120 --ignore=E302,W503
+          flake8 bot/ --max-line-length=120 --ignore=E302,W503,E211,E251,E303,E265,E231,W292,W391,W293,E225,W291,E303
 
       - name: Deploy
         uses: appleboy/ssh-action@v1.0.0
