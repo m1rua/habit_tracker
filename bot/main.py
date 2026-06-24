@@ -10,7 +10,7 @@ from aiogram.dispatcher.filters.state import State, StatesGroup
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.types import CallbackQuery
 import os
-
+#yoyoyo
 logging.basicConfig(level=logging.INFO)
 
 load_dotenv()
