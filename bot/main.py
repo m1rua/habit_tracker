@@ -72,7 +72,7 @@ async def btn_list(message: Message):
         return
     text = ""
     for habit in habits:
-        text += f"{habit['id']}. {habit['name']}\n"
+        text += f"{habit['name']}\n"
     await message.answer(text)
 
 
