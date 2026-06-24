@@ -1,0 +1,13 @@
+CREATE TABLE habits (
+	id SERIAL PRIMARY KEY,
+	user_id BIGINT,
+	name TEXT,
+	created_at DATE DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE habit_logs (
+	id SERIAL PRIMARY KEY,
+	habit_id INTEGER REFERENCES habits(id) ON DELETE CASCADE,
+	user_id BIGINT,
+	completed_at DATE DEFAULT CURRENT_DATE
+);
