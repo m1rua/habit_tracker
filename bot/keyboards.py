@@ -9,6 +9,8 @@ main_menu.add(KeyboardButton("🗑 Удалить привычку"))
 main_menu.add(KeyboardButton ("✅ Отметить привычку"))
 main_menu.add(KeyboardButton ("📊 Статистика"))
 
+
+
 stats_keyboard = InlineKeyboardMarkup()
 stats_keyboard.add(
     InlineKeyboardButton("30 дней", callback_data="stats_30"),

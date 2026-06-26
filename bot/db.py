@@ -49,6 +49,15 @@ async def is_habit_logged_today(habit_id):
     await conn.close()
     return result
 
+async def get_logged_today(user_id: int):
+    conn = await get_connection()
+    result = await conn.fetch(
+        "SELECT habit_id FROM habit_logs WHERE user_id = $1 AND completed_at = CURRENT_DATE"
+        user_id
+    )
+    await conn.close()
+    return [r["habit_id"] for r in result]
+
 async def get_stats(user_id, days):
     conn = await get_connection()
     result = await conn.fetch(

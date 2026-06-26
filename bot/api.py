@@ -28,6 +28,12 @@ async def api_get_stats(user_id: int, days:int):
     result = await get_stats(user_id, days)
     return result
 
+@app.get("/habits/logged-today")
+async def api_logged_today(user_id: int):
+    from db import get_logged_today
+    result = await get_logged_today(user_id)
+    return result
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host = "0.0.0.0", port=8000)
