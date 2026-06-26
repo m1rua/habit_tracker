@@ -219,6 +219,8 @@ async function api(method, path, body) {
 async function loadHabits() {
   try {
     habits = await api('GET', `/habits?user_id=${USER_ID}`) || [];
+    const logged = await api('GET', `/habits/logged-today?user_id=${USER_ID}`) || [];
+    loggedToday = new Set(logged);
     renderHabits();
   } catch(e) {
     document.getElementById('habitList').innerHTML = '<div class="loading">Ошибка загрузки</div>';
