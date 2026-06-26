@@ -52,7 +52,7 @@ async def is_habit_logged_today(habit_id):
 async def get_logged_today(user_id: int):
     conn = await get_connection()
     result = await conn.fetch(
-        "SELECT habit_id FROM habit_logs WHERE user_id = $1 AND completed_at = CURRENT_DATE"
+        "SELECT habit_id FROM habit_logs WHERE user_id = $1 AND completed_at = CURRENT_DATE",
         user_id
     )
     await conn.close()
